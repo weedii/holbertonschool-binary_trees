@@ -17,6 +17,9 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 	if (!first || !second)
 		return (NULL);
 
+	if (first == second)
+		return ((binary_tree_t *)first);
+
 	if (first->parent == second->parent)
 		return (first->parent);
 
@@ -24,9 +27,6 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 		return (second->parent);
 	else if (second == first->parent)
 		return (first->parent);
-
-	if (first == second)
-		return ((binary_tree_t *)first);
 
 	if (first->parent != second->parent)
 		return (binary_trees_ancestor(first->parent, second->parent));
