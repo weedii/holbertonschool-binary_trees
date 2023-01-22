@@ -22,7 +22,6 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int))
 	while (head < tail)
 	{
 		node = queue[head++];
-		printf("-------- %d -------\n", node->n);
 
 		func(node->n);
 
